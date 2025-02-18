@@ -11,7 +11,7 @@ class Graph:
     def __init__(self):
         self.nodes = set()
         self.edges = {}
-        self.max_distance = 4730365236290400000 #default to 500LY
+        self.max_distance = 4730365236290022000  #default to just under 500LY
         self.current = None
         self.visited = set()
         self.path = []
