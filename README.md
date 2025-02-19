@@ -19,3 +19,9 @@ Next, specify the the starting solar system, maximum ship jump distance (in ligh
 ```console
 python shortestpath.py --solarsystem "D:3347" --jumpdistance 168 --format
 ```
+
+The mapanalysis file grabs some basic numbers for the galaxy and has examples of using the galaxy and graph classes. When I group the star systems in mapanalysis I use the default ~500ly max distance. However, when I check to see if a group of stars is traversable I'll use the --jumpdistance value. The former is good for checking if a gate can be built. The latter is checking if a particular ship can jump through them.
+
+```console
+python mapanalysis.py --jumpdistance 168
+```

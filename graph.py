@@ -71,13 +71,15 @@ class Graph:
             if n.name.lower() == name.lower():
                 return n
 
-    def group_solar_systems(self, solar_systems, max_distance):
+    def group_solar_systems(self, solar_systems, max_distance=None):
         '''Group solar systems by max distance. This show groups of solar systems that can't be traveled between'''
+        if max_distance is None:
+            max_distance = self.max_distance
         groups = defaultdict(list)
         visited = set()
 
         group_id = 0
-        print("Processing. Please wait")
+        #print("Processing. Please wait")
         for start_system in solar_systems:
             if start_system in visited:
                 continue
@@ -105,7 +107,7 @@ class Graph:
         for g in groups:
             connected = False
             for s in g:
-                if len(s.neighbours) > 0:
+                if len(s.neighbors) > 0:
                     connected = True 
                     break
             if not connected:
